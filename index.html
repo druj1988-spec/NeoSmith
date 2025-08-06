@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoSmith Hobby - Redesigned</title>
+    <title>NeoSmith Hobby - Explore. Consult. Create.</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="loader"></div>
+
     <header>
         <nav>
             <div class="logo">
                 <a href="index.html">NeoSmith Hobby</a>
             </div>
             <ul class="nav-links">
+                <li><a href="consultations.html">Consultations</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="manga.html">Manga</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="theme-switcher">
                 <button id="theme-toggle">Light Mode</button>
@@ -24,52 +28,38 @@
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <section class="hero">
             <div class="hero-content">
-                <h1>Welcome to NeoSmith Hobby</h1>
-                <p>A new era of digital collectibles and manga.</p>
-                <a href="#services" class="cta-button">Explore Our World</a>
+                <h1 class="reveal-up">Explore. Consult. Create.</h1>
+                <p class="reveal-up" data-delay="200">A veteran-owned studio bridging digital collectibles consulting, comics & manga publishing, and storytelling through Web3.</p>
+                <a href="#services" class="cta-button reveal-up" data-delay="400">Enter the Hobby</a>
             </div>
         </section>
 
         <section id="services" class="services-section">
-            <div class="service-tile">
-                <h2>Digital Collectible Consultations</h2>
+            <div class="service-tile reveal-up">
+                <h2>Digital Collectibles Consulting</h2>
+                <p>Strategy and portfolio advising for Web3 creators and collectors</p>
             </div>
-            <div class="service-tile">
+            <div class="service-tile reveal-up" data-delay="200">
                 <h2>Digital Asset Store</h2>
+                <p>Digital downloads including comics, stories, art, and NFTs</p>
             </div>
-            <div class="service-tile">
-                <h2>Manga/Comics Publishing</h2>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio-section">
-            <h2>Showcase</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item"></div>
-                <div class="portfolio-item"></div>
-                <div class="portfolio-item"></div>
-                <div class="portfolio-item"></div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="about-content">
-                <h2>About NeoSmith Hobby</h2>
-                <p>We are a passionate team dedicated to the future of digital creativity.</p>
+            <div class="service-tile reveal-up" data-delay="400">
+                <h2>Comics & Story Publishing</h2>
+                <p>Tools and services for self-publishing serialized digital works</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Get in touch: <a href="mailto:hello@neosmithhobby.com">hello@neosmithhobby.com</a></p>
+        <p>Veteran-Owned • Digital Consulting • Comics Publishing • Web3 Editions</p>
         <div class="social-links">
-            <a href="#">YT</a>
-            <a href="#">IG</a>
-            <a href="#">TK</a>
-            <a href="#">TW</a>
+            <a href="#"><img src="assets/icons/youtube.svg" alt="YouTube"></a>
+            <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
+            <a href="#"><img src="assets/icons/twitter.svg" alt="X"></a>
         </div>
     </footer>
 
