@@ -1,32 +1,37 @@
 /*-============================================================================
- * --- Main Stylesheet ---
+ * --- Main Stylesheet (Redesigned) ---
  *
- *  Theme: NeoSmith Hobby - Modern & Dark
- *
- *  Table of Contents:
- *    1. Variables
- *    2. Reset & Base Styles
- *    3. Typography
- *    4. Header & Navigation
- *    5. Hero Section
- *    6. Shop & Manga Grids
- *    7. Forms
- *    8. Footer
- *    9. Animations & Transitions
- *   10. Responsive Design
+ *  Theme: NeoSmith Hobby - Doze Studio Inspired
  *
  *===========================================================================*/
 
-/* 1. Variables
+/* 1. Variables & Theme
  *----------------------------------------------------------------------------*/
 :root {
-    --primary-color: #ffffff; /* White */
-    --secondary-color: #9b59b6; /* Amethyst */
-    --background-color: #121212; /* Dark Gray */
-    --surface-color: #1e1e1e; /* Slightly lighter gray */
-    --accent-color: #3498db; /* Peter River Blue */
-    --font-family-main: 'Roboto', sans-serif;
+    --font-family-main: 'Inter', sans-serif;
     --font-family-headings: 'Montserrat', sans-serif;
+
+    /* Light Theme */
+    --light-bg: #f5f5f5;
+    --light-text: #1a1a1a;
+    --light-accent: #333;
+
+    /* Dark Theme */
+    --dark-bg: #1a1a1a;
+    --dark-text: #f5f5f5;
+    --dark-accent: #555;
+}
+
+[data-theme="light"] {
+    --bg-color: var(--light-bg);
+    --text-color: var(--light-text);
+    --accent-color: var(--light-accent);
+}
+
+[data-theme="dark"] {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --accent-color: var(--dark-accent);
 }
 
 /* 2. Reset & Base Styles
@@ -37,15 +42,19 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-family-main);
-    background-color: var(--background-color);
-    color: var(--primary-color);
-    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 a {
-    color: var(--accent-color);
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -53,31 +62,13 @@ ul {
     list-style: none;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-main {
-    padding: 2rem 1rem;
-}
-
-/* 3. Typography
- *----------------------------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-headings);
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
-}
-
-/* 4. Header & Navigation
+/* 3. Header & Navigation
  *----------------------------------------------------------------------------*/
 header {
-    background-color: var(--surface-color);
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    z-index: 100;
 }
 
 nav {
@@ -88,287 +79,149 @@ nav {
 
 .logo a {
     font-family: var(--font-family-headings);
-    font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 
 .nav-links {
     display: flex;
+    gap: 2rem;
 }
 
-.nav-links li {
-    margin-left: 2rem;
-}
-
-.nav-links a {
-    color: var(--primary-color);
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--secondary-color);
-}
-
-.burger {
-    display: none;
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
     cursor: pointer;
+    border-radius: 20px;
 }
 
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 5px;
-    transition: all 0.3s ease;
+/* 4. Main Content & Sections
+ *----------------------------------------------------------------------------*/
+main {
+    width: 100%;
+    overflow: hidden;
 }
 
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* 5. Hero Section
  *----------------------------------------------------------------------------*/
 .hero {
-    background: url('../assets/images/hero-bg.jpg') no-repeat center center/cover;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--primary-color);
+    background: linear-gradient(45deg, #2c3e50, #3498db);
 }
 
-.hero-text h1 {
-    font-size: 3rem;
+.hero h1 {
+    font-family: var(--font-family-headings);
+    font-size: 5vw;
     margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5vw;
 }
 
 .cta-button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border: 1px solid var(--text-color);
     display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--text-color);
+    color: var(--bg-color);
 }
 
-/* 6. Shop & Manga Grids
+/* 6. Services Section
  *----------------------------------------------------------------------------*/
-.shop-section, .manga-section, .consultation-section, .about-section, .contact-section {
-    padding: 4rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.product-grid, .manga-grid {
+.services-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    padding: 0;
+    min-height: auto;
 }
 
-.product-card, .manga-card {
-    background-color: var(--surface-color);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-tile {
+    height: 300px;
+    background-color: var(--accent-color);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.product-card:hover, .manga-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.service-tile:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
 }
 
-.product-card img, .manga-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+.service-tile h2 {
+    font-size: 2vw;
 }
 
-.product-card h3, .manga-card h3 {
-    padding: 1rem 1.5rem;
-    color: var(--primary-color);
-    margin-top: 0.5rem;
-}
-
-.product-card p, .manga-card p {
-    padding: 0 1.5rem 1.5rem;
-    flex-grow: 1;
-}
-
-.buy-button, .read-more-button, .cta-button {
-    display: block;
-    width: auto;
-    padding: 1rem 1.5rem;
-    margin: 1.5rem;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    border-radius: 5px;
-    align-self: flex-start;
-}
-
-.buy-button:hover, .read-more-button:hover, .cta-button:hover {
-    background-color: var(--secondary-color);
-}
-
-.crypto-checkout {
-    text-align: center;
-    margin-top: 3rem;
-    padding: 2rem;
-    background: var(--surface-color);
-    border-radius: 10px;
-}
-
-.crypto-checkout button {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--accent-color);
-    padding: 0.8rem 1.5rem;
-    margin: 0 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 5px;
-}
-
-.crypto-checkout button:hover {
-    background-color: var(--accent-color);
-    color: var(--background-color);
-}
-
-/* 7. Forms
+/* 7. Portfolio Section
  *----------------------------------------------------------------------------*/
-.contact-section {
-    max-width: 700px;
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 80%;
+    margin-top: 2rem;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.portfolio-item {
+    height: 300px;
+    background-color: var(--accent-color);
+    transition: transform 0.3s;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+.portfolio-item:hover {
+    transform: scale(1.05) rotate(2deg);
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background-color: var(--surface-color);
-    color: var(--primary-color);
-    transition: border-color 0.3s ease;
+/* 8. About Section
+ *----------------------------------------------------------------------------*/
+.about-section {
+    background-color: var(--accent-color);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-}
-
-
-/* 8. Footer
+/* 9. Footer
  *----------------------------------------------------------------------------*/
 footer {
-    background-color: var(--surface-color);
+    padding: 2rem;
     text-align: center;
-    padding: 2rem 1rem;
 }
 
-.social-media {
-    margin-bottom: 1rem;
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.social-media a {
-    margin: 0 0.5rem;
-}
-
-.social-media img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
-}
-
-.social-media img:hover {
-    transform: scale(1.2);
-}
-
-/* 9. Animations & Transitions
+/* 10. Placeholder Section
  *----------------------------------------------------------------------------*/
-.hidden {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
-}
-
-.visible {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-}
-
-
-/* 10. Responsive Design
- *----------------------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
-        background-color: var(--surface-color);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
-
-    .nav-links li {
-        opacity: 0;
-        margin-left: 0;
-        margin-bottom: 1rem;
-    }
-
-    .burger {
-        display: block;
-    }
-
-    .nav-active {
-        transform: translateX(0%);
-    }
-
-    @keyframes navLinkFade {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-    }
-
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .toggle .line2 {
-        opacity: 0;
-    }
-
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+.placeholder-section {
+    min-height: 80vh;
 }

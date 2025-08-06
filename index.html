@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoSmith Hobby - Digital Collectibles, Manga, and More</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>NeoSmith Hobby - Redesigned</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,39 +14,63 @@
                 <a href="index.html">NeoSmith Hobby</a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="consultations.html">Consultations</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="manga.html">Manga</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+            <div class="theme-switcher">
+                <button id="theme-toggle">Light Mode</button>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-text">
+            <div class="hero-content">
                 <h1>Welcome to NeoSmith Hobby</h1>
-                <p>Your one-stop shop for digital collectibles, manga, and creative consultations.</p>
-                <a href="shop.html" class="cta-button">Explore the Shop</a>
+                <p>A new era of digital collectibles and manga.</p>
+                <a href="#services" class="cta-button">Explore Our World</a>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="service-tile">
+                <h2>Digital Collectible Consultations</h2>
+            </div>
+            <div class="service-tile">
+                <h2>Digital Asset Store</h2>
+            </div>
+            <div class="service-tile">
+                <h2>Manga/Comics Publishing</h2>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <h2>Showcase</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item"></div>
+                <div class="portfolio-item"></div>
+                <div class="portfolio-item"></div>
+                <div class="portfolio-item"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>About NeoSmith Hobby</h2>
+                <p>We are a passionate team dedicated to the future of digital creativity.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="social-media">
-            <a href="#"><img src="assets/icons/youtube.svg" alt="YouTube"></a>
-            <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
-            <a href="#"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
-            <a href="#"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+        <p>Get in touch: <a href="mailto:hello@neosmithhobby.com">hello@neosmithhobby.com</a></p>
+        <div class="social-links">
+            <a href="#">YT</a>
+            <a href="#">IG</a>
+            <a href="#">TK</a>
+            <a href="#">TW</a>
         </div>
-        <p>&copy; 2024 NeoSmith Hobby. All Rights Reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>

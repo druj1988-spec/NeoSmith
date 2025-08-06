@@ -1,48 +1,33 @@
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+// --- Theme Switcher ---
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
 
-    burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
+themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        themeToggle.textContent = 'Dark Mode';
+    } else {
+        html.setAttribute('data-theme', 'dark');
+        themeToggle.textContent = 'Light Mode';
+    }
+});
 
-        // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-            }
-        });
+// --- Scroll Animations ---
+const sections = document.querySelectorAll('section');
 
-        // Burger Animation
-        burger.classList.toggle('toggle');
-    });
-}
-
-navSlide();
-
-// Scroll-reveal animations
-const scrollReveal = () => {
-    const sections = document.querySelectorAll('section');
-
-    const revealSection = (entries, observer) => {
-        const [entry] = entries;
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-    };
-
-    const sectionObserver = new IntersectionObserver(revealSection, {
-        root: null,
-        threshold: 0.15,
-    });
-
-    sections.forEach(section => {
-        section.classList.add('hidden');
-        sectionObserver.observe(section);
-    });
+const revealSection = (entries, observer) => {
+    const [entry] = entries;
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
 };
 
-scrollReveal();
+const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0.15,
+});
+
+sections.forEach(section => {
+    sectionObserver.observe(section);
+});
