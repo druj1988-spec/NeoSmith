@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoSmith Hobby - Explore. Consult. Create.</title>
+    <title>Checkout - NeoSmith Hobby</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=BAA9kggRCBg5Yq1aia2Yl6eO2f9oGX8s5EHQUSabJw0vSdoE6QR-giv1PlwVhvXCzZoo-72T5f8qewoNks&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
 </head>
 <body>
     <div class="loader"></div>
@@ -30,29 +31,10 @@
     </header>
 
     <main class="fade-in">
-        <section class="hero">
-            <video autoplay loop muted playsinline class="hero-video">
-                <source src="assets/video/A_glowing_book.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <h1 class="reveal-up">Explore. Consult. Create.</h1>
-                <p class="reveal-up" data-delay="200">A veteran-owned studio bridging digital collectibles consulting, comics & manga publishing, and storytelling through Web3.</p>
-                <a href="#services" class="cta-button reveal-up" data-delay="400">Enter the Hobby</a>
-            </div>
-        </section>
-
-        <section id="services" class="services-section">
-            <div class="service-tile reveal-up">
-                <h2>Digital Collectibles Consulting</h2>
-                <p>Strategy and portfolio advising for Web3 creators and collectors</p>
-            </div>
-            <div class="service-tile reveal-up" data-delay="200">
-                <h2>Digital Asset Store</h2>
-                <p>Digital downloads including comics, stories, art, and NFTs</p>
-            </div>
-            <div class="service-tile reveal-up" data-delay="400">
-                <h2>Comics & Story Publishing</h2>
-                <p>Tools and services for self-publishing serialized digital works</p>
+        <section class="checkout-section">
+            <div class="checkout-container reveal-up">
+                <h1>Complete Your Purchase</h1>
+                <div id="paypal-container-PU5Y8NVH7UEJU"></div>
             </div>
         </section>
     </main>
@@ -68,5 +50,10 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        paypal.HostedButtons({
+            hostedButtonId: "PU5Y8NVH7UEJU",
+        }).render("#paypal-container-PU5Y8NVH7UEJU")
+    </script>
 </body>
 </html>

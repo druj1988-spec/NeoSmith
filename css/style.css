@@ -267,3 +267,35 @@ footer {
 .placeholder-section {
     min-height: 80vh;
 }
+
+/* 12. Checkout Page
+ *----------------------------------------------------------------------------*/
+.checkout-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.checkout-container {
+    background-color: var(--accent-color);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.checkout-container:hover {
+    box-shadow: 0 0 30px var(--text-color);
+}
+
+.checkout-container h1 {
+    margin-bottom: 2rem;
+}
+
+#paypal-button-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
