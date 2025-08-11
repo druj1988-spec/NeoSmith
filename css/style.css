@@ -210,6 +210,11 @@ section {
 /* 8. Services Section
  *----------------------------------------------------------------------------*/
 .services-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 90%;
     background-color: transparent;
 }
 
@@ -219,6 +224,7 @@ section {
     border-radius: 10px;
     transition: transform 0.3s, background-color 0.3s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex: 1 1 300px;
 }
 
 .service-tile:hover {
