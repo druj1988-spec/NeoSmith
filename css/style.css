@@ -322,6 +322,16 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    .hero-video {
+        display: none;
+    }
+
+    .hero {
+        background-image: url('../assets/images/mobile-hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
     .hero h1 {
         font-size: 10vw;
     }
