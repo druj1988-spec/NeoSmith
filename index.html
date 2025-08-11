@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="loader"></div>
+    <video autoplay loop muted playsinline class="hero-video">
+        <source src="assets/video/A_glowing_book.mp4" type="video/mp4">
+    </video>
 
     <header>
         <nav>
@@ -18,61 +20,43 @@
                 <a href="index.html">NeoSmith Hobby</a>
             </div>
             <ul class="nav-links">
-                <li><a href="consultations.html">Consultations</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="manga.html">Manga</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-                <li><a href="rip-and-ship.html">Rip & Ship</a></li>
+                <li><a href="#">Consultations</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Manga</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
-            <div class="theme-switcher">
-                <button id="theme-toggle">Light Mode</button>
-            </div>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
         </nav>
     </header>
 
-    <main class="fade-in">
+    <main>
         <section class="hero">
-            <video autoplay loop muted playsinline class="hero-video" preload="none" poster="assets/images/mobile-hero-bg.jpg">
-                <source src="assets/video/A_glowing_book.mp4" type="video/mp4">
-            </video>
             <div class="hero-content">
-                <h1 class="reveal-up">Explore. Consult. Create.</h1>
-                <p class="reveal-up" data-delay="200">A veteran-owned studio bridging digital collectibles consulting, comics & manga publishing, and storytelling through Web3.</p>
-                <a href="#services" class="cta-button reveal-up" data-delay="400">Enter the Hobby</a>
+                <h1>Explore. Consult. Create.</h1>
+                <a href="#services" class="cta-button">Enter the Hobby</a>
             </div>
         </section>
 
-        <section id="services" class="services-section">
-            <div class="service-tile reveal-up">
-                <h2>Digital Collectibles Consulting</h2>
-                <p>Strategy and portfolio advising for Web3 creators and collectors</p>
-            </div>
-            <div class="service-tile reveal-up" data-delay="200">
-                <h2>Digital Asset Store</h2>
-                <p>Digital downloads including comics, stories, art, and NFTs</p>
-            </div>
-            <div class="service-tile reveal-up" data-delay="400">
-                <h2>Comics & Story Publishing</h2>
-                <p>Tools and services for self-publishing serialized digital works</p>
+        <section id="services" class="services-section-wrapper">
+            <div class="services-grid-container">
+                <div class="service-tile">
+                    <h2>Digital Collectibles Consulting</h2>
+                    <p>Strategy and portfolio advising for Web3 creators and collectors</p>
+                </div>
+                <div class="service-tile">
+                    <h2>Digital Asset Store</h2>
+                    <p>Digital downloads including comics, stories, art, and NFTs</p>
+                </div>
+                <div class="service-tile">
+                    <h2>Comics & Story Publishing</h2>
+                    <p>Tools and services for self-publishing serialized digital works</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <p>Veteran-Owned • Digital Consulting • Comics Publishing • Web3 Editions</p>
-        <div class="social-links">
-            <a href="#"><img loading="lazy" src="assets/icons/youtube.svg" alt="YouTube"></a>
-            <a href="#"><img loading="lazy" src="assets/icons/instagram.svg" alt="Instagram"></a>
-            <a href="#"><img loading="lazy" src="assets/icons/tiktok.svg" alt="TikTok"></a>
-            <a href="#"><img loading="lazy" src="assets/icons/twitter.svg" alt="X"></a>
-        </div>
     </footer>
 
     <script src="js/main.js"></script>
