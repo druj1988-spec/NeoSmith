@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.querySelector('.loader');
     const mainContent = document.querySelector('main');
 
-    setTimeout(() => {
+    window.addEventListener('load', () => {
         loader.classList.add('hidden');
         mainContent.classList.add('visible');
-    }, 500);
+    });
 
     // --- Theme Switcher ---
     const themeToggle = document.getElementById('theme-toggle');
@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    burger.addEventListener('click', () => {
+    burger.addEventListener('click', (e) => {
+        e.stopPropagation();
         // Toggle Nav
         nav.classList.toggle('nav-active');
 
