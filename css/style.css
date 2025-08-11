@@ -156,6 +156,7 @@ section {
 .hero {
     position: relative;
     overflow: hidden;
+    background-color: #000; /* Fallback for video */
 }
 
 .hero-video {
@@ -330,6 +331,7 @@ footer {
         background-image: url('../assets/images/mobile-hero-bg.jpg');
         background-size: cover;
         background-position: center;
+        background-attachment: fixed;
     }
 
     .hero h1 {
