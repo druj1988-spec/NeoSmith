@@ -88,6 +88,11 @@ header {
     width: 100%;
     padding: 1.5rem 2rem;
     z-index: 100;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 nav {
@@ -205,10 +210,7 @@ section {
 /* 8. Services Section
  *----------------------------------------------------------------------------*/
 .services-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    width: 90%;
+    background-color: transparent;
 }
 
 .service-tile {
@@ -216,12 +218,14 @@ section {
     background-color: var(--accent-color);
     border-radius: 10px;
     transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .service-tile:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.02);
     background-color: var(--text-color);
     color: var(--bg-color);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 .service-tile h2 {
@@ -344,6 +348,11 @@ footer {
 
     .services-section {
         grid-template-columns: 1fr;
+    }
+
+    .service-tile {
+        box-shadow: none;
+        border: 1px solid var(--text-color);
     }
 
     .nav-links {
