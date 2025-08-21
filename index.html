@@ -3,60 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoSmith Hobby - Explore. Consult. Create.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>NeoSmith Hobby - New Landing Page</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <video autoplay loop muted playsinline class="hero-video">
-        <source src="assets/video/A_glowing_book.mp4" type="video/mp4">
-    </video>
-
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">NeoSmith Hobby</a>
+    <!-- This is a manual recreation of the React/Tailwind template -->
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="logo">NeoSmith Hobby</div>
+            <div class="nav-links">
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Project</a>
+                <a href="#contact">CONTACT US</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#">Consultations</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Manga</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Explore. Consult. Create.</h1>
-                <a href="#services" class="cta-button">Enter the Hobby</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Crafting<br>narrative<br><span>through</span><br>design</h1>
+            <div class="dots">
+                <div></div><div></div><div></div><div></div>
             </div>
-        </section>
-
-        <section id="services" class="services-section-wrapper">
-            <div class="services-grid-container">
-                <div class="service-tile">
-                    <h2>Digital Collectibles Consulting</h2>
-                    <p>Strategy and portfolio advising for Web3 creators and collectors</p>
-                </div>
-                <div class="service-tile">
-                    <h2>Digital Asset Store</h2>
-                    <p>Digital downloads including comics, stories, art, and NFTs</p>
-                </div>
-                <div class="service-tile">
-                    <h2>Comics & Story Publishing</h2>
-                    <p>Tools and services for self-publishing serialized digital works</p>
-                </div>
+            <p>We believe good design is key to building strong connections.</p>
+        </div>
+        <div class="hero-images">
+            <!-- Images will be represented by colored divs for now -->
+            <div class="grid-col-1">
+                <div class="img-box-1"><div></div></div>
+                <div class="img-box-2"><div></div></div>
             </div>
-        </section>
-    </main>
+            <div class="grid-col-2">
+                <div class="img-box-3"><div></div></div>
+                <div class="img-box-4"><div></div></div>
+            </div>
+        </div>
+        <div class="hero-footer">
+            <button>SEE OUR PORTFOLIO</button>
+            <button>SCROLL NOW</button>
+        </div>
+    </section>
 
-    <footer>
-        <p>Veteran-Owned • Digital Consulting • Comics Publishing • Web3 Editions</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <!-- Content will be added later -->
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <!-- Content will be added later -->
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <!-- Content will be added later -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <!-- Content will be added later -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Content will be added later -->
     </footer>
 
     <script src="js/main.js"></script>
