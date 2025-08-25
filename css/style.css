@@ -13,7 +13,7 @@
     --font-family-headings: 'Montserrat', sans-serif;
 
     /* Dark Theme */
-    --dark-text: #ffffff;
+    --dark-text: #000000;
     --dark-accent-semi-transparent: rgba(31, 31, 31, 0.8);
     --dark-border: #333333;
 }
